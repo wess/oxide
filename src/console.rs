@@ -10,6 +10,20 @@
 
 use colored::*;
 
+use std::env;
+use std::path::Path;
+use std::ffi::OsStr;
+
+fn prog() -> Option<String> {
+  env::args().next()
+      .as_ref()
+      .map(Path::new)
+      .and_then(Path::file_name)
+      .and_then(OsStr::to_str)
+      .map(String::from)
+}
+
+
 pub const CHECK_MARK:&str="✔";
 pub const CROSS_MARK:&str="✖";
 pub const ARROW_MARK:&str="⮕";
@@ -42,7 +56,7 @@ pub fn _bug_mark() -> String {
 }
 
 pub fn _wordmark() -> String {
-  let name = env!("CARGO_PKG_NAME");
+  let name = prog().unwrap_or("error".to_string());
 
   format!("[{}]", name).bold().dimmed().to_string()
 }
