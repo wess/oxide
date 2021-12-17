@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 colored = "2.0.0"
+libc = "0.2.108"
+nix = "0.23.1"
