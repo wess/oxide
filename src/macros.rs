@@ -8,6 +8,7 @@
 // Copywrite (c) 2021 Wess.io
 //
 
+
 #[macro_export]
 macro_rules! either {
   ($test:expr => $truthy:expr , $falsy:expr) => {
@@ -78,6 +79,8 @@ macro_rules! file_write {
 #[macro_export]
 macro_rules! file_read {
   ($path:expr) => {{
+    use std::io::Read;
+    
     let mut file = match std::fs::File::open($path) {
       Ok(file) => file,
       Err(e) => {
