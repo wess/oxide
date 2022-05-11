@@ -3,6 +3,27 @@
 
 ---
 
+### Adding it:
+To add to your project you could add it to your Cargo.toml like:
+
+```
+[dependencies.oxide]
+git = 'https://github.com/wess/oxide.git'
+branch = 'master'
+```
+
+or like:
+
+```
+oxide = {git = 'https://github.com/wess/oxide.git', branch = 'master'}
+
+```
+
+---
+
+## Now the breakdown:
+
+
 ### Console:
 > Console macros print to stdout with a format like: `[<project_name>] <emoji> <your message here>`
 
