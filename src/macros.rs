@@ -22,7 +22,12 @@ macro_rules! either {
 
 #[macro_export]
 macro_rules! string {
-  ($str:expr) => {{ String::from($str) }}
+  ($str:expr) => 
+    {{ String::from($str) }};
+
+  ($str:expr, $(xs:expr)*) => 
+    {{String::from(format!($str, $(xs)* ))}};
+  
 }
 
 #[macro_export]
