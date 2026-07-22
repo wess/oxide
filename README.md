@@ -62,3 +62,5 @@ console_success!("Yay: ", "woot");
   - `let content = file_read!("/path/to/content");`
 - file_exists : Is it there, or not? 
   - `if file_exists!("/path/to") {`
+
+♥ [Sponsor this project](https://github.com/sponsors/wess)
